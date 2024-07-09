@@ -9,4 +9,7 @@ class StudentController extends Controller
     public function index(){
         return view('backend.student.index');
     }
+    public function store(){
+        
+    }
 }
