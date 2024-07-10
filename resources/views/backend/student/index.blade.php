@@ -26,29 +26,30 @@
                         <div class="card-body">
                             <h5 class="card-title">Product</h5>
                             <div class="d-flex justify-content-between mb-4">
-                                <a href="" class="btn btn-primary">Add Product</a>
+                                <a href="{{route('student.admission')}}" class="btn btn-primary">Admission</a>
                             </div>
 
                             <!-- Table with stripped rows -->
                             <table class="table datatable">
                                 <thead>
-                                    {{-- <tr>
+                                    <tr>
                                         <th>ID</th>
                                         <th>Name</th>
-                                        <th>Price</th>
-                                        <th>Description</th>
-                                        <th>Image</th>
+                                        <th>Email</th>
+                                        <th>Department</th>
+                                        <th>Contact</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($products as $product)
+                                    @foreach ($students as $student)
                                         <tr>
-                                            <td>{{ $product->id }}</td>
-                                            <td>{{ $product->name }}</td>
-                                            <td>{{ $product->price }}</td>
-                                            <td>{{ $product->description }}</td>
-                                            <td>
+                                            <td>{{ $student->id }}</td>
+                                            <td>{{ $student->name }}</td>
+                                            <td>{{ $student->email }}</td>
+                                            <td>{{ $student->department }}</td>
+                                            <td>{{ $student->contact }}</td>
+                                            {{-- <td>
                                                 @if ($product->image)
                                                     <img src="{{ asset('storage/' . $product->image) }}" width="50"
                                                         height="50">
@@ -65,9 +66,9 @@
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                                                 </form>
-                                            </td>
+                                            </td> --}}
                                         </tr>
-                                    @endforeach --}}
+                                    @endforeach
                                 </tbody>
                             </table>
                             <!-- End Table with stripped rows -->

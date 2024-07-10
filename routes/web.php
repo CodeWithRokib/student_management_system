@@ -21,4 +21,6 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('backend.dashboard.dashboard');
 });
-Route::get('/student/class1',[StudentController::class, 'index'])->name('class1');
+Route::get('/student',[StudentController::class, 'index'])->name('student.index');
+Route::get('/studentAdmission',[StudentController::class, 'create'])->name('student.admission');
+Route::post('/studentAdmission',[StudentController::class, 'store'])->name('students.store');

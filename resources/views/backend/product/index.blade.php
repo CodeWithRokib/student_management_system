@@ -35,9 +35,9 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Name</th>
-                                        <th>Price</th>
-                                        <th>Description</th>
-                                        <th>Image</th>
+                                        <th>Email</th>
+                                        <th>Department</th>
+                                        <th>Contact</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>

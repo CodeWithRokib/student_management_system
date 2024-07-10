@@ -4,9 +4,6 @@
 @endsection
 @section('content')
 
-
-
-
     <main id="main" class="main">
 
         <div class="pagetitle">

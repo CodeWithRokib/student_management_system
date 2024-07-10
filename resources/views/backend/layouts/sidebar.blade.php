@@ -13,9 +13,9 @@
 
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="{{route('class1')}}">
+        <a class="nav-link collapsed" href="{{route('student.index')}}">
           <i class="bi bi-person"></i>
-          <span>Student Class1</span>
+          <span>Students</span>
         </a>
       </li><!-- End Profile Page Nav -->
 
