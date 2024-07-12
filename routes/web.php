@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\DepartmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +26,12 @@ Route::get('/dashboard', function () {
 Route::get('/student',[StudentController::class, 'index'])->name('student.index');
 Route::get('/studentAdmission',[StudentController::class, 'create'])->name('student.admission');
 Route::post('/studentAdmission',[StudentController::class, 'store'])->name('students.store');
+
+Route::get('/teacher',[TeacherController::class, 'index'])->name('teacher.index');
+Route::get('/teacher/create',[TeacherController::class, 'create'])->name('teacher.create');
+Route::post('/teacher/create',[TeacherController::class, 'store'])->name('teacher.store');
+
+
+Route::get('/department',[DepartmentController::class, 'index'])->name('department.index');
+Route::get('/department/create',[DepartmentController::class, 'create'])->name('department.create');
+Route::post('/department/create',[DepartmentController::class, 'store'])->name('department.store');

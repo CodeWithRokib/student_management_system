@@ -20,9 +20,15 @@
       </li><!-- End Profile Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="">
+        <a class="nav-link collapsed" href="{{route('teacher.index')}}">
           <i class="bi bi-question-circle"></i>
-          <span>Table Booking</span>
+          <span>Teachers</span>
+        </a>
+      </li><!-- End F.A.Q Page Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{{route('department.index')}}">
+          <i class="bi bi-question-circle"></i>
+          <span>Department</span>
         </a>
       </li><!-- End F.A.Q Page Nav -->
 
