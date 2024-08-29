@@ -24,6 +24,9 @@ Route::get('/', function () {
 Route::get('/events', function () {
     return view('frontend.events.index');
 })->name('event');
+Route::get('/gallery', function () {
+    return view('frontend.gallery.index');
+})->name('gallery');
 
 Route::get('/dashboard', function () {
     return view('backend.dashboard.dashboard');

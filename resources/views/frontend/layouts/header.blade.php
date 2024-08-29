@@ -5,12 +5,12 @@
         <nav id="menu">
             <ul>
                 <li><a href="events.html">Courses</a></li>
-                <li><a href="gallery.html">Students</a></li>
+                <li><a href="{{route('gallery')}}">Students</a></li>
                 <li><a href="{{route('event')}}">Events</a></li>
              </ul>
             <ul>
-                <li><a href="gallery.html">Teachers</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="">Teachers</a></li>
+                <li><a href="{{route('gallery')}}">Gallery</a></li>
                 <li><a href="#fancy" class="get-contact">Contact</a></li>
                </ul>
         </nav>
