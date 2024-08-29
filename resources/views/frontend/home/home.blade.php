@@ -109,4 +109,22 @@
 			<span class="arrow"></span>
 		</a>
 	</div>
+
+	<div id="fancy">
+    <h2>Request information</h2>
+    <form action="{{route('contact.store')}}" method="POST">
+		@csrf
+        <div class="left">
+            <fieldset class="mail"><input name="email" id="email" placeholder="Email address..." type="text"></fieldset>
+            <fieldset class="name"><input name="name" id="name" placeholder="Name..." type="text"></fieldset>
+            <fieldset class="subject" ><select name="subject" id="subject"><option>Choose subject...</option><option>Choose subject...</option><option>Choose subject...</option></select></fieldset>
+        </div>
+        <div class="right">
+            <fieldset class="question"><textarea name="question" id="question" placeholder="Question..."></textarea></fieldset>
+        </div>
+        <div class="btn-holder">
+            <button class="btn blue" type="submit">Send request</button>
+        </div>
+    </form>
+</div>
 @endsection
