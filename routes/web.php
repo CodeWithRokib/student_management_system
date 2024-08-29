@@ -35,3 +35,8 @@ Route::post('/teacher/create',[TeacherController::class, 'store'])->name('teache
 Route::get('/department',[DepartmentController::class, 'index'])->name('department.index');
 Route::get('/department/create',[DepartmentController::class, 'create'])->name('department.create');
 Route::post('/department/create',[DepartmentController::class, 'store'])->name('department.store');
+
+Route::get('/contact',[ContactController::class, 'index'])->name('contact.index');
+Route::post('/contact',[ContactController::class, 'store'])->name('contact.store');
+
+
