@@ -20,7 +20,8 @@ use App\Http\Controllers\ContactController;
 
 Route::get('/', function () {
     return view('frontend.home.home');
-});
+})->name('home');
+
 Route::get('/dashboard', function () {
     return view('backend.dashboard.dashboard');
 });

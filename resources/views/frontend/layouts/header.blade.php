@@ -1,6 +1,6 @@
 <header id="header">
     <div class="container">
-        <a href="index.html" id="logo" title="HarrisonHighSchool">HarrisonHighSchool</a>
+        <a href="{{route('home')}}" id="logo" title="HarrisonHighSchool">HarrisonHighSchool</a>
         <div class="menu-trigger"></div>
         <nav id="menu">
             <ul>
