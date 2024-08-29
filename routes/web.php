@@ -21,6 +21,9 @@ use App\Http\Controllers\ContactController;
 Route::get('/', function () {
     return view('frontend.home.home');
 })->name('home');
+Route::get('/events', function () {
+    return view('frontend.events.index');
+})->name('event');
 
 Route::get('/dashboard', function () {
     return view('backend.dashboard.dashboard');
@@ -40,5 +43,3 @@ Route::post('/department/create',[DepartmentController::class, 'store'])->name('
 
 Route::get('/contact',[ContactController::class, 'index'])->name('contact.index');
 Route::post('/contact',[ContactController::class, 'store'])->name('contact.store');
-
-
