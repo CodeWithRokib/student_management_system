@@ -30,7 +30,7 @@ Route::get('/gallery', function () {
 
 Route::get('/dashboard', function () {
     return view('backend.dashboard.dashboard');
-});
+})->name('dashboard');
 Route::get('/student',[StudentController::class, 'index'])->name('student.index');
 Route::get('/studentAdmission',[StudentController::class, 'create'])->name('student.admission');
 Route::post('/studentAdmission',[StudentController::class, 'store'])->name('students.store');
@@ -46,3 +46,4 @@ Route::post('/department/create',[DepartmentController::class, 'store'])->name('
 
 Route::get('/contact',[ContactController::class, 'index'])->name('contact.index');
 Route::post('/contact',[ContactController::class, 'store'])->name('contact.store');
+Route::delete('/contact',[ContactController::class, 'destroy'])->name('contacts.destroy');

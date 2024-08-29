@@ -9,7 +9,7 @@ class ContactController extends Controller
 {
     public function index(){
         $contacts = Contact::all();
-        return view('',compact('contacts'));
+        return view('backend.contact.index',compact('contacts'));
     }
 
     public function store(Request $request)

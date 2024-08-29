@@ -24,7 +24,7 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Teacher</h5>
+                            <h5 class="card-title">Department</h5>
                             <div class="d-flex justify-content-between mb-4">
                                 <a href="{{route('department.create')}}" class="btn btn-primary">DepartmentAdd</a>
                             </div>

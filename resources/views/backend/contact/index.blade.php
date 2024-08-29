@@ -4,7 +4,6 @@
 @endsection
 
 @section('content')
-
     <main id="main" class="main">
 
         <div class="pagetitle">
@@ -25,7 +24,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Product</h5>
-                          
+
 
                             <!-- Table with stripped rows -->
                             <table class="table datatable">
@@ -34,26 +33,27 @@
                                         <th>Name</th>
                                         <th>Email</th>
                                         <th>Subject</th>
-                                        <th>Message</th>
+                                        <th>Question</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($contacts as $contact)
-                                    <tr>
-                                        <td>{{ $contact->name }}</td>
-                                        <td>{{ $contact->email }}</td>
-                                        <td>{{ $contact->subject }}</td>
-                                        <td>{{ $contact->message }}</td>
-                                        <td>
-                                            <form action="{{ route('contacts.destroy', $contact->id) }}" method="POST" style="display:inline-block;">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger">Delete</button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                @endforeach
+                                    @foreach ($contacts as $contact)
+                                        <tr>
+                                            <td>{{ $contact->name }}</td>
+                                            <td>{{ $contact->email }}</td>
+                                            <td>{{ $contact->subject }}</td>
+                                            <td>{{ $contact->question }}</td>
+                                            <td>
+                                                <form action="{{ route('contacts.destroy', $contact->id) }}" method="POST"
+                                                    style="display:inline-block;">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                             <!-- End Table with stripped rows -->
