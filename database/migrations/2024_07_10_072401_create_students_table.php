@@ -22,7 +22,7 @@ return new class extends Migration
             $table->integer('age');
             $table->string('contact');
             $table->string('department');
-            $table->string('password');
+            $table->string('class');
             $table->timestamps();
         });
     }

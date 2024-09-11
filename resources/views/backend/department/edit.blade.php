@@ -1,6 +1,6 @@
 @extends('backend.layouts.master')
 @section('title')
-    createDepartment
+    edit department
 @endsection
 
 @section('content')
@@ -35,16 +35,20 @@
                     <div class="card-body">
                         <h5 class="card-title">Admission Form</h5>
 
-                        <!-- General Form Elements -->
-    <form action="{{ route('departments.store') }}" method="POST">
-        @csrf
-        <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" name="name" class="form-control" placeholder="Enter Name">
-        </div>
+                 {{-- Department Edit Form --}}
+<form action="{{ route('departments.update', $department->id) }}" method="POST">
+    @csrf
+    @method('PUT')
     
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" name="name" class="form-control" value="{{ old('name', $department->name) }}" placeholder="Enter Name">
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>
+
+    
 </div>
 </div>
 

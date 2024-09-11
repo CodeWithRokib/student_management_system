@@ -30,19 +30,40 @@ class StudentController extends Controller
             'age' => 'required|integer',
             'contact' => 'required',
             'department' => 'required',
-            'password' => 'required|min:6',
+            'class' => 'required',
         ]);
 
         $data = $request->all();
-        $data['password'] = Hash::make($request->password);
+
 
         Student::create($data);
 
         return redirect()->route('students.index')->with('success', 'Student created successfully.');
     }
+    public function update(Request $request, Student $student)
+{
+    // Validate the request
+    $request->validate([
+        'name' => 'required',
+        'email' => 'required|email|unique:students',
+        'address' => 'required',
+        'father_name' => 'required',
+        'mother_name' => 'required',
+        'gender' => 'required',
+        'age' => 'required|integer',
+        'contact' => 'required',
+        'department' => 'required',
+        'class' => 'required',
+    ]);
 
+    // Update the teacher with validated data
+    $student->update($request->all());
+
+    // Redirect back with success message
+    return redirect()->route('students.index')->with('success', 'Student updated successfully.');
+}
     public function edit(Student $student){
-        return view('',compact('student'));
+        return view('backend.student.edit',compact('student'));
     }
 
     public function destroy(Student $student){

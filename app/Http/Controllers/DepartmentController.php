@@ -26,9 +26,16 @@ class DepartmentController extends Controller
 
         return redirect()->route('departments.index')->with('success', 'Department created successfully.');
     }
-    
+    public function update(Request $request, Department $department){
+        $request->validate([
+            'name' => 'required|string|max:255',
+        ]);
+        $department->update($request->all());
+        return redirect()->route('departments.index')->with('success', value: 'Department Updated successfully.');
+
+    }
     public function edit(Department $department){
-        return view('',compact('department'));
+        return view('backend.department.edit',compact('department'));
     }
     public function destroy(Department $department){
         $department->delete();

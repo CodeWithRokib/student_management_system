@@ -79,8 +79,8 @@
             <input type="text" name="department" class="form-control" placeholder="Enter Department">
         </div>
         <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password" name="password" class="form-control" placeholder="Enter Password">
+            <label for="class">Class:</label>
+            <input type="text" name="class" class="form-control" placeholder="Enter class">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

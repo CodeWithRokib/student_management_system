@@ -29,10 +29,29 @@ class TeacherController extends Controller
 
         Teacher::create($request->all());
 
-        return redirect()->route('teacher.index')->with('success', 'Teacher created successfully.');
+        return redirect()->route('teachers.index')->with('success', 'Teacher created successfully.');
     }
+
+    public function update(Request $request, Teacher $teacher)
+{
+    // Validate the request
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'email' => 'required|email' , 
+        'number' => 'required|string|max:15',
+        'department' => 'required|string|max:255',
+        'designation' => 'required|string|max:255',
+    ]);
+
+    // Update the teacher with validated data
+    $teacher->update($request->all());
+
+    // Redirect back with success message
+    return redirect()->route('teachers.index')->with('success', 'Teacher updated successfully.');
+}
+
     public function edit(Teacher $teacher){
-        return view('',compact('teacher'));
+        return view('backend.teacher.edit',compact('teacher'));
     }
     public function destroy(Teacher $teacher){
         $teacher->delete();

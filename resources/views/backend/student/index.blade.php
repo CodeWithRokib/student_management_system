@@ -37,6 +37,7 @@
                                         <th>Name</th>
                                         <th>Email</th>
                                         <th>Department</th>
+                                        <th>Class</th>
                                         <th>Contact</th>
                                         <th>Actions</th>
                                     </tr>
@@ -48,6 +49,7 @@
                                             <td>{{ $student->name }}</td>
                                             <td>{{ $student->email }}</td>
                                             <td>{{ $student->department }}</td>
+                                            <td>{{ $student->class }}</td>
                                             <td>{{ $student->contact }}</td>
                                             <td>
                                                 <a href="{{ route('students.edit', $student->id) }}" class="btn btn-warning btn-sm">Edit</a>

@@ -36,7 +36,7 @@
                         <h5 class="card-title">Admission Form</h5>
 
                         <!-- General Form Elements -->
-    <form action="{{ route('teacher.store') }}" method="POST">
+    <form action="{{ route('teachers.store') }}" method="POST">
         @csrf
         <div class="form-group">
             <label for="name">Name:</label>
