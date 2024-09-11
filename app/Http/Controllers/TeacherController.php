@@ -31,5 +31,12 @@ class TeacherController extends Controller
 
         return redirect()->route('teacher.index')->with('success', 'Teacher created successfully.');
     }
-    
+    public function edit(Teacher $teacher){
+        return view('',compact('teacher'));
+    }
+    public function destroy(Teacher $teacher){
+        $teacher->delete();
+        return redirect()->route('departments.index')->with('success', 'Teacher deleted successfully.');
+
+    }
 }

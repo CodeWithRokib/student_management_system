@@ -31,18 +31,12 @@ Route::get('/gallery', function () {
 Route::get('/dashboard', function () {
     return view('backend.dashboard.dashboard');
 })->name('dashboard');
-Route::get('/student',[StudentController::class, 'index'])->name('student.index');
-Route::get('/studentAdmission',[StudentController::class, 'create'])->name('student.admission');
-Route::post('/studentAdmission',[StudentController::class, 'store'])->name('students.store');
 
-Route::get('/teacher',[TeacherController::class, 'index'])->name('teacher.index');
-Route::get('/teacher/create',[TeacherController::class, 'create'])->name('teacher.create');
-Route::post('/teacher/create',[TeacherController::class, 'store'])->name('teacher.store');
+Route::resource('students',StudentController::class);
+Route::resource('teachers',TeacherController::class);
+Route::resource('departments',DepartmentController::class);
 
 
-Route::get('/department',[DepartmentController::class, 'index'])->name('department.index');
-Route::get('/department/create',[DepartmentController::class, 'create'])->name('department.create');
-Route::post('/department/create',[DepartmentController::class, 'store'])->name('department.store');
 
 Route::get('/contact',[ContactController::class, 'index'])->name('contact.index');
 Route::post('/contact',[ContactController::class, 'store'])->name('contact.store');

@@ -38,6 +38,15 @@ class StudentController extends Controller
 
         Student::create($data);
 
-        return redirect()->route('student.index')->with('success', 'Student created successfully.');
+        return redirect()->route('students.index')->with('success', 'Student created successfully.');
+    }
+
+    public function edit(Student $student){
+        return view('',compact('student'));
+    }
+
+    public function destroy(Student $student){
+        $student->delete();
+        return redirect()->route('students.index')->with('success','student deleted successfully');
     }
 }

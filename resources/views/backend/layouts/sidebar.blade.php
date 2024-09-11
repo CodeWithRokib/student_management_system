@@ -13,20 +13,20 @@
 
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="{{route('student.index')}}">
+        <a class="nav-link collapsed" href="{{route('students.index')}}">
           <i class="bi bi-person"></i>
           <span>Students</span>
         </a>
       </li><!-- End Profile Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="{{route('teacher.index')}}">
+        <a class="nav-link collapsed" href="{{route('teachers.index')}}">
           <i class="bi bi-question-circle"></i>
           <span>Teachers</span>
         </a>
       </li><!-- End F.A.Q Page Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="{{route('department.index')}}">
+        <a class="nav-link collapsed" href="{{route('departments.index')}}">
           <i class="bi bi-question-circle"></i>
           <span>Department</span>
         </a>
