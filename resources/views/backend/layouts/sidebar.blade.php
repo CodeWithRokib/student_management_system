@@ -77,3 +77,9 @@
     </ul>
 
   </aside><!-- End Sidebar-->
+
+  {{-- @if(auth()->user()->role == \App\Models\User::ROLE_ADMIN || auth()->user()->role == \App\Models\User::ROLE_SUPERADMIN) 
+  @elseif(auth()->user()->role == \App\Models\User::ROLE_DOCTOR)
+  @else
+  <p>You do not have access to this section.</p>
+  @endif --}}
