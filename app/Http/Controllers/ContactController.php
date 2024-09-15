@@ -23,7 +23,7 @@ class ContactController extends Controller
 
         Contact::create($validatedData);
 
-        return redirect()->route('students.index')->with('success', 'Contact created successfully.');
+        return redirect()->route('home')->with('success', 'Contact created successfully.');
     }
 
     public function destroy($id)
