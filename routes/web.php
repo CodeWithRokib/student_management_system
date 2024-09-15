@@ -7,6 +7,7 @@ use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +20,9 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.home.home');
-})->name('home');
+// Route::get('/', function () {
+//     return view('frontend.home.home');
+// })->name('home');
 Route::get('/events', function () {
     return view('frontend.events.index');
 })->name('event');
@@ -37,6 +38,9 @@ Route::get('/register',[AuthController::class, 'loadRegister']);
 Route::post('/register',[AuthController::class, 'register'])->name('register.store');
 Route::get('/login',[AuthController::class,'loadLogin'])->name('login.page');
 Route::post('/login',[AuthController::class,'userLogin'])->name('login');
+
+
+Route::get('/',[HomeController::class,'index'])->name('home');
 
 Route::resource('students',StudentController::class);
 Route::resource('teachers',TeacherController::class);

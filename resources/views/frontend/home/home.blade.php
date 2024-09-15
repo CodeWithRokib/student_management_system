@@ -117,7 +117,12 @@
         <div class="left">
             <fieldset class="mail"><input name="email" id="email" placeholder="Email address..." type="text"></fieldset>
             <fieldset class="name"><input name="name" id="name" placeholder="Name..." type="text"></fieldset>
-            <fieldset class="subject" ><select name="subject" id="subject"><option>Choose subject...</option><option>Choose subject...</option><option>Choose subject...</option></select></fieldset>
+            <fieldset class="subject" ><select name="subject" id="subject">
+                <option>Choose Department</option>
+                @foreach ($departments as $department)
+                <option value="{{ $department->id }}">{{ $department->name }}</option>
+                @endforeach
+            </select></fieldset>
         </div>
         <div class="right">
             <fieldset class="question"><textarea name="question" id="question" placeholder="Question..."></textarea></fieldset>
