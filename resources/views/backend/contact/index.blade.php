@@ -45,11 +45,12 @@
                                             <td>{{ $contact->subject }}</td>
                                             <td>{{ $contact->question }}</td>
                                             <td>
-                                                <form action="{{ route('contacts.destroy', $contact->id) }}" method="POST"
-                                                    style="display:inline-block;">
+                                                <form action="{{ route('contacts.destroy', $contact->id) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Are you   
+                                             sure you want to delete this   
+                                             contact?')">Delete Contact</button>
                                                 </form>
                                             </td>
                                         </tr>

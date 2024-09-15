@@ -23,13 +23,22 @@ class ContactController extends Controller
 
         Contact::create($validatedData);
 
-        return redirect()->route('student.index')->with('success', 'Contact created successfully.');
+        return redirect()->route('students.index')->with('success', 'Contact created successfully.');
     }
 
-    public function destroy(Contact $contact)
+    public function destroy($id)
     {
-        $contact->delete();
 
-        return redirect()->route('questions.index')->with('success', 'Question deleted successfully.');
+            try{
+             $contact= Contact::find($id);
+             if ($contact->delete()) {
+                 return redirect()->route('contact.index')->with('success', 'Contact deleted successfully.');
+             } else {
+                 return redirect('/contact');
+         }
+            }catch(\Exception $exception){
+             return $exception->getMessage();
+            }
+
     }
 }

@@ -46,7 +46,7 @@ Route::resource('departments',DepartmentController::class);
 
 Route::get('/contact',[ContactController::class, 'index'])->name('contact.index');
 Route::post('/contact',[ContactController::class, 'store'])->name('contact.store');
-Route::delete('/contact',[ContactController::class, 'destroy'])->name('contacts.destroy');
+Route::delete('/contact/{id}',[ContactController::class, 'destroy'])->name('contacts.destroy');
 
 
 
