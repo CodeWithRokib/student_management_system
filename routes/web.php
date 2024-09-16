@@ -42,18 +42,18 @@ Route::post('/login',[AuthController::class,'userLogin'])->name('login');
 
 Route::get('/',[HomeController::class,'index'])->name('home');
 
-Route::resource('students',StudentController::class);
-Route::resource('teachers',TeacherController::class);
-Route::resource('departments',DepartmentController::class);
-
-
-
 Route::get('/contact',[ContactController::class, 'index'])->name('contact.index');
 Route::post('/contact',[ContactController::class, 'store'])->name('contact.store');
 Route::delete('/contact/{id}',[ContactController::class, 'destroy'])->name('contacts.destroy');
 
 
 
-Route::middleware(['auth', 'role:admin,super admin,doctor'])->group(function () {
+Route::middleware(['auth', 'role:admin,super admin'])->group(function () {
+
+    Route::resource('students',StudentController::class);
+    Route::resource('teachers',TeacherController::class);
+    Route::resource('departments',DepartmentController::class);
+
+
 
 });

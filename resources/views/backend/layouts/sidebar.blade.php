@@ -10,6 +10,7 @@
         </a>
       </li><!-- End Dashboard Nav -->
 
+      @if(auth()->check() && in_array(auth()->user()->role, [\App\Models\User::ROLE_ADMIN, \App\Models\User::ROLE_SUPERADMIN]))
 
 
       <li class="nav-item">
@@ -73,13 +74,14 @@
           <span>Blank</span>
         </a>
       </li><!-- End Blank Page Nav --> --}}
+      @else
+
+      <p>You do not have access to this section.</p>
+
+      @endif
 
     </ul>
 
   </aside><!-- End Sidebar-->
 
-  {{-- @if(auth()->user()->role == \App\Models\User::ROLE_ADMIN || auth()->user()->role == \App\Models\User::ROLE_SUPERADMIN) 
-  @elseif(auth()->user()->role == \App\Models\User::ROLE_DOCTOR)
-  @else
-  <p>You do not have access to this section.</p>
-  @endif --}}
+
