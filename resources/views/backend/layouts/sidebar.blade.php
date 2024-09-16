@@ -40,6 +40,15 @@
         </a>
       </li><!-- End Contact Page Nav -->
 
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{{route('role.index')}}">
+          <i class="bi bi-envelope"></i>
+          <span>Role Management</span>
+        </a>
+      </li><!-- End Contact Page Nav -->
+
+
+
       {{-- <li class="nav-item">
         <a class="nav-link collapsed" href="">
           <i class="bi bi-envelope"></i>

@@ -8,6 +8,7 @@ use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\RoleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,10 +51,14 @@ Route::delete('/contact/{id}',[ContactController::class, 'destroy'])->name('cont
 
 Route::middleware(['auth', 'role:admin,super admin'])->group(function () {
 
+    Route::get('/role', [RoleController::class, 'index'])->name('role.index');
+    Route::get('/role/destroy/{id}', [RoleController::class, 'destroy'])->name('user.destroy');
+    Route::get('/role/edit/{id}', [RoleController::class, 'edit'])->name('user.edit');
+    Route::post('/role/update/{id}', [RoleController::class, 'update'])->name('user.update');
+
     Route::resource('students',StudentController::class);
     Route::resource('teachers',TeacherController::class);
     Route::resource('departments',DepartmentController::class);
-
 
 
 });
