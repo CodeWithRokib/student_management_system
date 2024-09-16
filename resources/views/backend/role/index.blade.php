@@ -1,6 +1,6 @@
 @extends('backend.layouts.master')
 @section('title')
-    teacher
+    role
 @endsection
 
 @section('content')

@@ -13,7 +13,7 @@ class RoleController extends Controller
     }
 
 
-    public function edit($id)
+     public function edit($id)
     {
         $user = User::findOrFail($id);
         return view('backend.role.edit', compact('user'));
